@@ -4,10 +4,10 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>Exporting a Report to HTML</title>
+    <title>Reports on Django</title>
 
     <!-- Stimulsoft Reports.JS -->
-    <script src="{% static 'reports/stimulsoft.reports.js' %}" type="text/javascript"></script>
+    <script src="{% static 'scripts/stimulsoft.reports.js' %}" type="text/javascript"></script>
 </head>
 
 <body>
@@ -36,7 +36,8 @@
         // Render report
         report.renderAsync(function () {
             document.getElementById("showHtml").disabled = false;
-            document.getElementById("saveHtml").disabled = false;
+            document.getElementById("savePDF").disabled = false;
+            document.getElementById("saveHTML").disabled = false;
         });
 
         // Export report to HTML format and show it
@@ -59,10 +60,20 @@
                 Stimulsoft.System.StiObject.saveAs(htmlString, fileName + ".html", "text/html;charset=utf-8");
             }, Stimulsoft.Report.StiExportFormat.Html);
         }
+        function saveReportPdf() {
+            // Export to PDF
+            report.exportDocumentAsync(function (pdfData) {
+                // Get report file name
+                var fileName = report.reportAlias;
+                // Save data to file
+                Stimulsoft.System.StiObject.saveAs(pdfData, fileName + ".pdf", "application/pdf");
+            }, Stimulsoft.Report.StiExportFormat.Pdf);
+        }
     </script>
 
     <button id="showHtml" onclick="exportReportHtml()" disabled>Show reports</button><br>
-    <button id="saveHtml" onclick="saveReportHtml()" disabled>Save as PDF</button><br>
+    <button id="savePDF" onclick="saveReportPdf()" disabled>Save as PDF</button><br>
+    <button id="saveHTML" onclick="saveReportHtml()" disabled>Save as HTML</button><br>
     <br><br>
     <div id="htmlContainer"></div>
 </body>
