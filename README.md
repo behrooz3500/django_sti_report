@@ -1,1 +1,1 @@
-Integrating stimulsoft reports in django templates
+Integrating stimulsoft reports with django templates
