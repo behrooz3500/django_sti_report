@@ -829,7 +829,6 @@
         </receipt_header>
         <receipt_data Ref="55" type="DataBand" isKey="true">
           <Brush>Transparent</Brush>
-          <BusinessObjectGuid>55b628b454db4d6a887723528d35b11f</BusinessObjectGuid>
           <ClientRectangle>0,14.01,7.1,0.8</ClientRectangle>
           <Components isList="true" count="5">
             <Text4 Ref="56" type="Text" isKey="true">
@@ -953,7 +952,8 @@
             </Text25>
           </Components>
           <Conditions isList="true" count="0" />
-          <DataSourceName isNull="true" />
+          <DataRelationName isNull="true" />
+          <DataSourceName>ReceiptItems</DataSourceName>
           <Expressions isList="true" count="0" />
           <Filters isList="true" count="0" />
           <Name>receipt_data</Name>
@@ -1544,10 +1544,10 @@
     <value>Stimulsoft.Report.Dll</value>
   </ReferencedAssemblies>
   <ReportAlias>Report</ReportAlias>
-  <ReportChanged>1/21/2024 5:02:51 PM</ReportChanged>
+  <ReportChanged>1/21/2024 6:19:32 PM</ReportChanged>
   <ReportCreated>6/8/2023 2:33:45 PM</ReportCreated>
-  <ReportFile>E:\VirtualMachines\SharedFolder\reports\reports\FactorForoosh8cmRE.mrt</ReportFile>
-  <ReportGuid>3f59ae00a1714bd4982c87456e0f6961</ReportGuid>
+  <ReportFile>E:\VirtualMachines\SharedFolder\django_sti_report\webapp\static\reports\reports\FactorForoosh8cmRE.mrt</ReportFile>
+  <ReportGuid>6e2618f3982d4bdd8ce166af84930ccb</ReportGuid>
   <ReportName>Report</ReportName>
   <ReportUnit>Centimeters</ReportUnit>
   <ReportVersion>2023.1.1.0</ReportVersion>
