@@ -21,10 +21,18 @@
         report.loadFile("{% static 'reports/test_report.mrt' %}");
 
         // Create new DataSet object
+        try{
+        // Loading data from context    
+        var jsonData = JSON.parse('{{ json_data | safe }}');
         var dataSet = new Stimulsoft.System.Data.DataSet("invoiceItems");
 
         // Load JSON data file from specified URL to the DataSet object
-        dataSet.readJsonFile("{% static 'reports/test.json' %}");
+        // dataSet.readJsonFile("{% static 'reports/test.json' %}");
+        
+        dataSet.readJson(jsonData);
+        } catch (error) {
+            console.error('error here:', error);
+        }
 
         // Remove all connections from the report template
         report.dictionary.databases.clear();
